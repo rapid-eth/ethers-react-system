@@ -48,8 +48,6 @@
     "lint-staged": "latest",
     "nodemon": "^1.19.2",
     "nyc": "latest",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
     "xo": "latest"
