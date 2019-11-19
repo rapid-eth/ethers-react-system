@@ -163,30 +163,6 @@ const effects = (callUseEffect, state, dispatch) => {
   //     runEffect();
   //   }
   // }, [state.store.deploy]);
-
-  /**
-   * @function LoadContract
-   * @description LOAD_CONTRACT_INTO_LIBRARY_REQUEST
-   */
-  // callUseEffect(() => {
-  //   if (state.library && state.library.length > 0) {
-  //     const request = state.library[0];
-
-  //     if (isAddress(request.address)) {
-  //       dispatch({
-  //         type: 'LOAD_CONTRACT_INTO_LIBRARY_SUCCESS',
-  //         id: request.id,
-  //         payload: request.payload
-  //       });
-  //     } else {
-  //       dispatch({
-  //         type: 'LOAD_CONTRACT_INTO_LIBRARY_FAILURE',
-  //         id: request.id,
-  //         payload: 'Invalid smart contract address.'
-  //       });
-  //     }
-  //   }
-  // }, [state.wallet, state.contracts]);
 };
 
 export default effects;
