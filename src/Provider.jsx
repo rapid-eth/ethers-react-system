@@ -11,7 +11,6 @@ import { initialize } from './middleware/initialize';
  * @param {Array} contracts
  * @param {String} provider
  * @todo Add hooks to query smart contracts
- * @todo Add dispatch async/await
  * @todo Add better error handling
  * @todo Find better way to automatically set the address and wallet
  */
