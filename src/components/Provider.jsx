@@ -14,7 +14,7 @@ import { initialize } from '../middleware/initialize';
  * @todo Add better error handling
  * @todo Find better way to automatically set the address and wallet
  */
-const Provider = ({ children, contracts, provider = 'metamask' }) => {
+const Provider = ({ children, contracts = [], provider = 'metamask' }) => {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(
     reducers,

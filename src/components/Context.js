@@ -41,7 +41,6 @@ import { ethers } from 'ethers';
 const Context = createContext({
   instance: ethers,
   contracts: {},
-  library: {},
   deployed: [],
   messages: {},
   signatures: {},

@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import {
   INIT_CONTRACT,
   SET_WALLET,
-  SIGN_TRANSACTION,
+  SEND_TRANSACTION,
   SIGN_MESSAGE,
   DEPLOY_CONTRACT
 } from './types';
@@ -193,7 +193,7 @@ export const sendTransaction = (state, dispatch) => (
   const contractFunction = contract[functionName];
   contractFunction(...params).then(tx => {
     return dispatch({
-      type: SIGN_TRANSACTION,
+      type: SEND_TRANSACTION,
       id: contractID,
       payload: tx.toNumber()
     });

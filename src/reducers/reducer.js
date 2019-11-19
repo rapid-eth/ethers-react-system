@@ -1,20 +1,20 @@
-import dot from 'dot-prop-immutable-chain';
 import { hashCode } from '../utilities';
 import {
   SET_PROVIDER,
   SET_PROVIDER_STATUS,
-  SIGN_TYPED_MESSAGE_REQUEST,
+  SIGN_TYPED_MESSAGE,
   SIGN_MESSAGE,
   INIT_CONTRACT,
   DEPLOY_CONTRACT,
   DEPLOY_CONTRACT_FROM_BYTECODE_REQUEST,
   SET_WALLET,
-  SIGN_TRANSACTION
+  SEND_TRANSACTION,
+  SET_ADDRESS
 } from '../actions/types';
 
 const reducerActions = (state, action) => {
   const { input, delta, id, payload, type } = action;
-  switch (action.type) {
+  switch (type) {
     case SET_PROVIDER:
       return {
         ...state,
@@ -25,7 +25,7 @@ const reducerActions = (state, action) => {
         ...state,
         providerStatus: payload
       };
-    case 'SET_ADDRESS':
+    case SET_ADDRESS:
       return {
         ...state,
         address: input
@@ -37,7 +37,7 @@ const reducerActions = (state, action) => {
         wallet: payload.wallet,
         contracts: payload.contracts
       };
-    case SIGN_TRANSACTION:
+    case SEND_TRANSACTION:
       return {
         ...state,
         signatures: {
@@ -45,7 +45,7 @@ const reducerActions = (state, action) => {
           [id]: payload
         }
       };
-    case SIGN_TYPED_MESSAGE_REQUEST:
+    case SIGN_TYPED_MESSAGE:
       return {
         ...state,
         store: {
