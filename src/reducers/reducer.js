@@ -1,5 +1,5 @@
 import dot from 'dot-prop-immutable-chain';
-import { hashCode } from './utilities';
+import { hashCode } from '../utilities';
 import {
   SET_PROVIDER,
   SET_PROVIDER_STATUS,
@@ -8,13 +8,11 @@ import {
   INIT_CONTRACT,
   DEPLOY_CONTRACT,
   DEPLOY_CONTRACT_FROM_BYTECODE_REQUEST,
-  LOAD_CONTRACT_INTO_LIBRARY_REQUEST,
   SET_WALLET,
   SIGN_TRANSACTION
-} from './actions/types';
+} from '../actions/types';
 
 const reducerActions = (state, action) => {
-  let filtered;
   const { input, delta, id, payload, type } = action;
   switch (action.type) {
     case SET_PROVIDER:
@@ -67,41 +65,6 @@ const reducerActions = (state, action) => {
           [id]: payload
         }
       };
-
-    /* ----------------------- */
-    /* Contract Loading     */
-    /* ----------------------- */
-    case LOAD_CONTRACT_INTO_LIBRARY_REQUEST:
-      return dot(state)
-        .set(`store.library`, [...state.store.library, action])
-        .value();
-
-    case 'LOAD_CONTRACT_INTO_LIBRARY_SUCCESS':
-      return dot(state)
-        .set(`library.${action.payload.contractName}`, action.payload)
-        .value();
-
-    case 'LOAD_CONTRACT_INTO_LIBRARY_FAILURE':
-      return dot(state)
-        .set(`store.library`, [])
-        .value();
-    /* ----------------------- */
-    /* Contract Loading     */
-    /* ----------------------- */
-    case 'LOAD_CONTRACT_REQUEST':
-      return dot(state)
-        .set(`store.library`, [...state.store.contracts, action])
-        .value();
-
-    case 'LOAD_CONTRACT_SUCCESS':
-      return dot(state)
-        .set(`contracts.${action.payload.contractName}`, action.payload)
-        .value();
-
-    case 'LOAD_CONTRACT_FAILURE':
-      return dot(state)
-        .set(`store.contracts`, [])
-        .value();
     /* ----------------------- */
     /* Contract Initialize     */
     /* ----------------------- */

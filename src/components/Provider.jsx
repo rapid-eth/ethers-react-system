@@ -1,9 +1,9 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import Context from './Context';
-import reducers from './reducer';
-import ProviderEffects from './effects';
-import { enhanceActions } from './middleware/actions';
-import { initialize } from './middleware/initialize';
+import reducers from '../reducers/reducer';
+import ProviderEffects from '../effects';
+import { enhanceActions } from '../middleware/actions';
+import { initialize } from '../middleware/initialize';
 /**
  * @summary A React Context Provider that provides a simple interface to most ethers.js functionality.
  * It allows for easy contract management and querying/transactions of the smart contracts.
