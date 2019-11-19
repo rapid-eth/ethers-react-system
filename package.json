@@ -17,7 +17,7 @@
     "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
     "bundle": "webpack --config ./config/webpack.config.js",
     "watch": "nodemon --ignore ./dist --exec cross-env BABEL_ENV=production babel src --out-dir dist",
-    "test": "npm run lint && npm run ava",
+    "test": "npm run ava",
     "test-coverage": "npm run lint && npm run nyc",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "ava": "cross-env NODE_ENV=test ava",
@@ -59,11 +59,12 @@
     "node": ">=8.3"
   },
   "bugs": {
-    "url": "https://github.com/kamescg/ethers-react-system/issues",
+    "url": "https://github.com/rapid-eth/ethers-react-system/issues",
     "email": "info@kamescg.com"
   },
   "contributors": [
-    "Kames <info@kamescg.com> (https://www.kamescg.com)"
+    "Kames <info@kamescg.com> (https://www.kamescg.com)",
+    "Luis Osta"
   ],
   "ava": {
     "failFast": true,
@@ -76,12 +77,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "*.js": [
