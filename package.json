@@ -1,5 +1,5 @@
 {
-  "name": "ethers-react-system",
+  "name": "@rapid-eth/ethers-react-system",
   "description": "Ethers Interface & Effects Management System",
   "version": "0.0.1-alpha",
   "author": "Luis Osta",
@@ -116,7 +116,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kamescg/ethers-react-system"
+    "url": "git://github.com/rapid-eth/ethers-react-system.git"
   },
   "xo": {
     "prettier": false,
