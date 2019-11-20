@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Build and Publish (GitHub)
 
 on:
   release:
