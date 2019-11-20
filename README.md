@@ -1,12 +1,7 @@
 # Ethers React System
+[![build and publish (GitHub)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)
 
-[![build status](https://img.shields.io/travis/com/KamesCG/react-context-portal.svg)](https://travis-ci.com/KamesCG/react-context-portal)
-[![code coverage](https://img.shields.io/codecov/c/github/KamesCG/react-context-portal.svg)](https://codecov.io/gh/KamesCG/react-context-portal)
-[![code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![made with lass](https://img.shields.io/badge/made_with-lass-95CC28.svg)](https://lass.js.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm downloads](https://img.shields.io/npm/dt/react-context-portal.svg)](https://npm.im/ethers-provider)
 
 example contract: 0x4c5effcd6eb5fa67e330c5d29f87df52dff01c05
 
