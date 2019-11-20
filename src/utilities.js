@@ -158,12 +158,12 @@ export const getContract = (contract, providerName, optionalParams = {}) => {
     const contractID = contractName;
     const deployedContract = new ethers.Contract(address, abi, provider);
 
-    return [deployedContract, address, contractID];
+    return [deployedContract, contractID];
   } else {
     const contractID = `${contractName}-Factory`;
     const wallet = provider.getSigner();
     const factory = new ethers.ContractFactory(abi, bytecode, wallet);
-    return [factory, address, contractID];
+    return [factory, contractID];
   }
 };
 

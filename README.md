@@ -1,9 +1,8 @@
 # Ethers React System
-[![build and publish (GitHub)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)
+
+[![build and publish (GitHub)](<https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg>)](<https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg>)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-example contract: 0x4c5effcd6eb5fa67e330c5d29f87df52dff01c05
 
 ```js
 npm install ethers-provider
@@ -12,7 +11,7 @@ npm install ethers-provider
 ## Example
 
 ```js
-import { EthersProvider } from 'ethers-provider';
+import { EthersProvider } from 'ethers-react-provider';
 
 <App>
   <EthersProvider>...</EthersProvider>
@@ -56,7 +55,7 @@ yarn add ethers-providers
 ## Getting Started
 
 ```js
-import { EthersProvider, EthersConsumer } from '@rapid/ethers-hooks';
+import { EthersProvider, EthersConsumer } from 'ethers-react-system';
 
 const App = () => {
   return (
@@ -95,7 +94,7 @@ the function requires the contract address and ABI and has additional optional r
 
 ```js
 import React from 'react';
-import { withEthers } from '@rapid/ethers-hooks';
+import { withEthers } from 'ethers-react-system';
 import TestContract from './build/TestContract.json';
 // you can optionally pass the deployedAddress but by default
 // it will be initialized to the latest deployment address
@@ -122,7 +121,7 @@ export default withEthers(WrappedApp);
 
 ```js
 import React from 'react';
-import { EthersProvider } from '@rapid/ethers-hooks';
+import { EthersProvider } from 'ethers-react-system';
 import WrappedApp from './WrappedApp';
 import TestContract from './build/TestContract.json';
 
