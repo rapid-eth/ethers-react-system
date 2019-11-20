@@ -27,7 +27,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@rapid-eth'
       - run: npm ci
-      - run: npm build
+      - run: npm run build
       - run: ls -alh
       - run: npm publish
         env:
