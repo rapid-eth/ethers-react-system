@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@onpaws'
+          scope: '@rapid-eth'
       - run: npm ci
       - run: npm publish
         env:
