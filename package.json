@@ -1,5 +1,5 @@
 {
-  "name": "@rapid-eth/ethers-react-system",
+  "name": "ethers-react-system",
   "description": "Ethers Interface & Effects Management System",
   "version": "0.0.1-alpha.0",
   "author": "Luis Osta",
