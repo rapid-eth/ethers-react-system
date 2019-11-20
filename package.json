@@ -27,6 +27,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
+    "@babel/register": "^7.7.0",
     "classnames": "^2.2.6",
     "ethers": "^4.0.37",
     "prop-types": "^15.7.2"
@@ -68,6 +69,9 @@
     "verbose": true,
     "helpers": [
       "test/helpers/**/*"
+    ],
+    "require": [
+      "@babel/register"
     ]
   },
   "commitlint": {
