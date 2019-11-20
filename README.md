@@ -1,4 +1,8 @@
 # Ethers React System
+
+### UNSTABLE
+#### No guarantees are made to this package's stability.
+
 [![build and publish (GitHub)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
