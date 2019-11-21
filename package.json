@@ -1,7 +1,7 @@
 {
-  "name": "@rapid-eth/ethers-react-system",
+  "name": "ethers-react-system",
   "description": "Ethers Interface & Effects Management System",
-  "version": "0.0.1-beta5",
+  "version": "0.0.1-alpha.2",
   "author": "Luis Osta",
   "homepage": "https://github.com/rapid-eth/ethers-react-system",
   "main": "dist/index.js",
@@ -28,9 +28,12 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
+    "@babel/register": "^7.7.0",
     "classnames": "^2.2.6",
     "ethers": "^4.0.37",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -69,6 +72,9 @@
     "verbose": true,
     "helpers": [
       "test/helpers/**/*"
+    ],
+    "require": [
+      "@babel/register"
     ]
   },
   "commitlint": {

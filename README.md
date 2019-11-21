@@ -1,7 +1,9 @@
 # Ethers React System
 
+## Warning: this repo is experimental, unstable, unsupported, and might break at any time. You've been warned.
 ### UNSTABLE
 #### No guarantees are made to this package's stability.
+
 
 [![build and publish (GitHub)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)](https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg)
 
