@@ -5,7 +5,6 @@
   "author": "Luis Osta",
   "homepage": "https://github.com/rapid-eth/ethers-react-system",
   "main": "dist/index.js",
-  "main:src": "src/index.js",
   "keywords": [
     "react",
     "ethers",
