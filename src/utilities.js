@@ -146,7 +146,7 @@ export const networkRouting = network => {
  * @param {Object} optionalParams
  */
 export const getContract = (contract, providerName, optionalParams = {}) => {
-  const { givenAddress } = optionalParams;
+  const { givenAddress, givenID } = optionalParams;
   const provider = networkRouting(providerName);
   const { abi, bytecode, contractName } = contract;
   const address = givenAddress || getLatestDeploymentAddress(contract);
@@ -156,10 +156,10 @@ export const getContract = (contract, providerName, optionalParams = {}) => {
 
   if (address.length > 0) {
     const deployedContract = new ethers.Contract(address, abi, provider);
-    const contractID = getContractID(deployedContract, contractName);
+    const contractID = givenID || getContractID(deployedContract, contractName);
     return [deployedContract, contractID];
   } else {
-    const contractID = `${contractName}-Factory`;
+    const contractID = givenID || `${contractName}-Factory`;
     const wallet = provider.getSigner();
     const factory = new ethers.ContractFactory(abi, bytecode, wallet);
     return [factory, contractID];

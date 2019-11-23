@@ -2,7 +2,6 @@ import {
   hashCode,
   generateNewContracts,
   getContract,
-  shortenAddress,
   getContractID
 } from '../utilities';
 import { ethers } from 'ethers';
