@@ -7,13 +7,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ```js
-npm install ethers-provider
+npm install ethers-react-system
 ```
 
 ## Example
 
 ```js
-import { EthersProvider } from 'ethers-react-provider';
+import { EthersProvider } from 'ethers-react-system';
 
 <App>
   <EthersProvider>...</EthersProvider>
@@ -45,13 +45,13 @@ Add Linting back to package.json
 ### [npm]
 
 ```sh
-npm install ethers-providers
+npm install ethers-react-system
 ```
 
 ### [yarn][]
 
 ```sh
-yarn add ethers-providers
+yarn add ethers-react-system
 ```
 
 ## Getting Started
