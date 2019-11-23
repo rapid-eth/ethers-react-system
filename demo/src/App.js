@@ -1,8 +1,10 @@
 import React from 'react';
+import { withEthers } from 'ethers-react-system';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App({ ethers }) {
+  console.log('Ethers: ', ethers);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default withEthers(App);
