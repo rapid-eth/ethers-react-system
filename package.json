@@ -38,6 +38,7 @@
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "ava": "latest",
@@ -50,11 +51,13 @@
     "lint-staged": "latest",
     "nodemon": "^1.19.2",
     "nyc": "latest",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
-    "xo": "latest",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2",
+    "xo": "latest"
   },
   "engines": {
     "node": ">=8.3"
@@ -73,8 +76,12 @@
     "helpers": [
       "test/helpers/**/*"
     ],
+    "extensions": [
+      "ts"
+    ],
     "require": [
-      "@babel/register"
+      "@babel/register",
+      "ts-node/register"
     ]
   },
   "commitlint": {
