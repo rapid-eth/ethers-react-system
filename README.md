@@ -170,6 +170,10 @@ export default withEthers(Home);
 // script
 ```
 
+## Deploy Contracts
+
+Deploy Contracts Functionality WIP. Once the fucntionality is implemented and tested the documentation will be added.
+
 ## Send Transaction
 
 The ether object contains a sendTransaction function that can be used to interfact with a smart contract. The contractID and functionName to interfact with must be provided as well as an array of the parameters of the given function.
