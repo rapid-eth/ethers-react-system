@@ -72,6 +72,7 @@ export const initContract = (state, dispatch) => (
   }
 
   try {
+    //the contractID will be the contractName and the shortened address of the contract
     const [contract, address, contractID] = getContract(
       Contract,
       defaultProvider,
