@@ -1,5 +1,5 @@
 import { utils, ethers, Contract, ContractFactory, Signer } from 'ethers';
-import { Web3Provider, BaseProvider } from 'ethers/providers';
+import { BaseProvider } from 'ethers/providers';
 import { ContractJSON } from './types/contracts';
 
 export const hashCode = function(input: string): number {
