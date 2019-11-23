@@ -5,7 +5,7 @@ import {
   shortenAddress,
   getContract,
   getLatestDeploymentAddress
-} from '../src/utilities';
+} from '../dist/utilities';
 import { ethers, utils } from 'ethers';
 import StorageDeployed from './data/StorageDeployed.json';
 
