@@ -1,5 +1,7 @@
 # Ethers React System
 
+## Warning: this repo is experimental, unstable, unsupported, and might break at any time. You've been warned.
+
 [![build and publish (GitHub)](<https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg>)](<https://github.com/rapid-eth/ethers-react-system/workflows/Build%20and%20Publish%20(GitHub)/badge.svg>)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

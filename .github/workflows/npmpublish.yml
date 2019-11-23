@@ -5,18 +5,19 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      # - run: npm test
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - run: npm ci
+  #     - run: npm run build
+  #     # - run: npm test
 
-  publish-gpr:
-    needs: build
+  build-and-publish-gpr:
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -26,6 +27,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@rapid-eth'
       - run: npm ci
+      - run: npm run build
+      - run: ls -alh
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
