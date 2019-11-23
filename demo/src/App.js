@@ -1,5 +1,6 @@
 import React from 'react';
 import { withEthers } from 'ethers-react-system';
+import Storage from './ethereum/contracts/Storage.json';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,17 +13,14 @@ function App({ ethers }) {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={handleClick(ethers)}>Deploy Storage Contract</button>
       </header>
     </div>
   );
 }
+
+const handleClick = ethers => () => {
+  ethers.deployContract('Storage-Factory');
+};
 
 export default withEthers(App);

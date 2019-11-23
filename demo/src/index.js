@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { EthersProvider } from 'ethers-react-system';
+import Storage from './ethereum/contracts/Storage.json';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const contracts = [Storage];
 ReactDOM.render(
-  <EthersProvider>
+  <EthersProvider contracts={contracts}>
     <App />
   </EthersProvider>,
   document.getElementById('root')

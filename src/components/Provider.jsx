@@ -24,6 +24,8 @@ const Provider = ({ children, contracts = [], provider = 'metamask' }) => {
     initialState,
     initialize(contracts, provider)
   );
+
+  const hey = 'his';
   const actions = enhanceActions(state, dispatch);
   ProviderEffects(useEffect, state, dispatch);
   return (

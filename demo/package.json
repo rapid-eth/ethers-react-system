@@ -5,14 +5,16 @@
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0",
-    "ethers-react-system": "0.0.1-alpha.2"
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ganache": "ganache-cli -p 7545 -q",
+    "migrate": "truffle migrate --reset --network development && cp -r build/contracts/ src/ethereum/",
+    "compile": "truffle compile && cp -r build/contracts/ src/ethereum/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.7.0"
   }
 }
