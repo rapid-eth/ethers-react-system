@@ -21,8 +21,7 @@
     "test-coverage": "npm run lint && npm run nyc",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "ava": "cross-env NODE_ENV=test ava",
-    "nyc": "cross-env NODE_ENV=test nyc ava",
-    "postinstall": "npm run build"
+    "nyc": "cross-env NODE_ENV=test nyc ava"
   },
   "peerDependencies": {
     "react": "^16.12.0",
