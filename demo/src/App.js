@@ -1,6 +1,5 @@
 import React from 'react';
 import { withEthers } from 'ethers-react-system';
-import Storage from './ethereum/contracts/Storage.json';
 import logo from './logo.svg';
 import './App.css';
 

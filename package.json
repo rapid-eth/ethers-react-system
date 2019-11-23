@@ -1,12 +1,12 @@
 {
   "name": "ethers-react-system",
   "description": "Ethers Interface & Effects Management System",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "author": "Luis Osta",
   "homepage": "https://github.com/rapid-eth/ethers-react-system",
   "main": "dist/index.js",
   "main:src": "src/index.js",
-  "module": "src/index.js",
+  "module": "dist/index.js",
   "keywords": [
     "react",
     "ethers",
@@ -24,28 +24,26 @@
     "nyc": "cross-env NODE_ENV=test nyc ava"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "dependencies": {
     "@babel/register": "^7.7.0",
     "classnames": "^2.2.6",
     "ethers": "^4.0.37",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "ava": "latest",
     "codecov": "latest",
     "cross-env": "latest",
-    "eslint": "latest",
+    "eslint": "^6.7.0",
     "eslint-config-xo-lass": "latest",
     "fixpack": "latest",
     "husky": "latest",
@@ -54,7 +52,9 @@
     "nyc": "latest",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
-    "xo": "latest"
+    "xo": "latest",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "engines": {
     "node": ">=8.3"
