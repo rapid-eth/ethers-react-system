@@ -21,10 +21,10 @@ export const hashCode = function(input) {
  * @return {String}
  */
 
-export function shortenAddress(address, num, showEnd = true) {
+export function shortenAddress(address, num = 5, showEnd = false) {
   if (!address) return null;
-  return `${address.slice(0).slice(0, num)}...${
-    showEnd ? address.slice(0).slice(-num) : ''
+  return `${address.slice(0).slice(0, num)}${
+    showEnd ? `...${address.slice(0).slice(-num)}` : ''
   }`;
 }
 export const trimBalance = balance => {
@@ -155,9 +155,8 @@ export const getContract = (contract, providerName, optionalParams = {}) => {
   //then it will be initialized as a factory
 
   if (address.length > 0) {
-    const contractID = contractName;
     const deployedContract = new ethers.Contract(address, abi, provider);
-
+    const contractID = getContractID(deployedContract, contractName);
     return [deployedContract, contractID];
   } else {
     const contractID = `${contractName}-Factory`;
@@ -196,6 +195,18 @@ export const generateNewContracts = (oldContracts, wallet) => {
   });
 
   return newContracts;
+};
+
+/**
+ *
+ * @param {Contract} Contract
+ * @param {*} contractName
+ */
+export const getContractID = (Contract, contractName) => {
+  const shortenedAddress = shortenAddress(Contract.address);
+  const contractID = `${contractName}-${shortenedAddress}`;
+
+  return contractID;
 };
 export default {
   createStringhash,
