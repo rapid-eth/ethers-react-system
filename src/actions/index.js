@@ -1,4 +1,9 @@
-import { hashCode, generateNewContracts, getContract } from '../utilities';
+import {
+  hashCode,
+  generateNewContracts,
+  getContract,
+  getContractID
+} from '../utilities';
 import { ethers } from 'ethers';
 import {
   INIT_CONTRACT,
@@ -67,6 +72,7 @@ export const initContract = (state, dispatch) => (
   }
 
   try {
+    //the contractID will be the contractName and the shortened address of the contract
     const [contract, address, contractID] = getContract(
       Contract,
       defaultProvider,
@@ -118,7 +124,7 @@ export const deployContract = (state, dispatch) => async (
     const factory = contracts[contractID];
     const deployedContract = await factory.deploy(...params);
     await deployedContract.deployed();
-    const deployedID = contractID.split('-')[0];
+    const deployedID = getContractID(deployedContract);
     dispatch({
       type: DEPLOY_CONTRACT,
       id: deployedID,

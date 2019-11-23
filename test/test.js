@@ -1,5 +1,5 @@
-const test = require('ava');
+import test from 'ava';
 
 test('it should pass', t => {
-  t.pass()
+  t.pass();
 });

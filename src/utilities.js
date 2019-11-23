@@ -21,10 +21,10 @@ export const hashCode = function(input) {
  * @return {String}
  */
 
-export function shortenAddress(address, num, showEnd = true) {
+export function shortenAddress(address, num = 5, showEnd = false) {
   if (!address) return null;
-  return `${address.slice(0).slice(0, num)}...${
-    showEnd ? address.slice(0).slice(-num) : ''
+  return `${address.slice(0).slice(0, num)}${
+    showEnd ? `...${address.slice(0).slice(-num)}` : ''
   }`;
 }
 export const trimBalance = balance => {
@@ -146,7 +146,7 @@ export const networkRouting = network => {
  * @param {Object} optionalParams
  */
 export const getContract = (contract, providerName, optionalParams = {}) => {
-  const { givenAddress } = optionalParams;
+  const { givenAddress, givenID } = optionalParams;
   const provider = networkRouting(providerName);
   const { abi, bytecode, contractName } = contract;
   const address = givenAddress || getLatestDeploymentAddress(contract);
@@ -155,15 +155,14 @@ export const getContract = (contract, providerName, optionalParams = {}) => {
   //then it will be initialized as a factory
 
   if (address.length > 0) {
-    const contractID = contractName;
     const deployedContract = new ethers.Contract(address, abi, provider);
-
-    return [deployedContract, address, contractID];
+    const contractID = givenID || getContractID(deployedContract, contractName);
+    return [deployedContract, contractID];
   } else {
-    const contractID = `${contractName}-Factory`;
+    const contractID = givenID || `${contractName}-Factory`;
     const wallet = provider.getSigner();
     const factory = new ethers.ContractFactory(abi, bytecode, wallet);
-    return [factory, address, contractID];
+    return [factory, contractID];
   }
 };
 
@@ -196,6 +195,18 @@ export const generateNewContracts = (oldContracts, wallet) => {
   });
 
   return newContracts;
+};
+
+/**
+ *
+ * @param {Contract} Contract
+ * @param {*} contractName
+ */
+export const getContractID = (Contract, contractName) => {
+  const shortenedAddress = shortenAddress(Contract.address);
+  const contractID = `${contractName}-${shortenedAddress}`;
+
+  return contractID;
 };
 export default {
   createStringhash,
