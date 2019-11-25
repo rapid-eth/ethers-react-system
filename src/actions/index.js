@@ -144,16 +144,38 @@ export const deployContract = (state, dispatch) => async (
  * @param {Object} abi
  * @param {String} bytecode
  */
-export const deployContractFromBytecode = (state, dispatch) => (
+export const deployContractFromBytecode = (state, dispatch) => async (
   abi,
   bytecode,
-  delta
-) =>
+  contractID
+) => {
+  const { contracts, wallet } = state;
+  if (wallet === undefined) {
+    throw new Error(
+      "Contract cannot be deployed when there's no connected wallet"
+    );
+  }
+
+  if (contractID === undefined) {
+    throw new Error(
+      'When deploying from bytecode a contractID must be provided'
+    );
+  }
+
+  if (contracts[contractID] !== undefined) {
+    throw new Error('The contractID provided is already in use');
+  }
+
+  const factory = new ethers.ContractFactory(abi, bytecode, wallet);
+  const deployedContract = await factory.deploy();
+  await deployedContract.deployed();
+
+  const deployedID = contractID;
   dispatch({
-    type: 'DEPLOY_CONTRACT_FROM_BYTECODE_REQUEST',
-    input: bytecode,
-    delta: delta || hashCode(abi)
+    type: DEPLOY_CONTRACT,
+    id: deployedID
   });
+};
 
 export const signMessageTyped = (state, dispatch) => ({ message, delta }) =>
   dispatch({
