@@ -13,8 +13,8 @@ export const initialize = (contracts, provider) => initialState => {
   }
   let deployed = {};
   contracts.forEach(contract => {
-    const [Contract, address, contractID] = getContract(contract, provider);
-    deployed[contractID] = getContractObject(contractID, Contract, { address });
+    const [Contract, contractID] = getContract(contract, provider);
+    deployed[contractID] = Contract;
   });
   return {
     ...initialState,
@@ -23,15 +23,4 @@ export const initialize = (contracts, provider) => initialState => {
       ...deployed
     }
   };
-};
-
-const getContractObject = (contractID, Contract, { address }) => {
-  if (contractID.includes('Factory')) {
-    return Contract;
-  } else {
-    return {
-      address,
-      contract: Contract
-    };
-  }
 };
